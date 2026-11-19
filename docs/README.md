@@ -38,5 +38,5 @@ records Studio only as optional provenance. The current binder scene projects
 and videos follow this flow.
 
 The canonical specifications live in
-[`Cohesian/k-graph`](../../k-graph/docs/RESOURCE-CONTRACT-V2.md) and
-[`Cohesian/tether`](../../tether/docs/CONTRIBUTOR-PROTOCOL-V2.md).
+[`cohesian/k-graph`](../../k-graph/docs/RESOURCE-CONTRACT-V2.md) and
+[`cohesian-tools/tether`](../../tether/docs/CONTRIBUTOR-PROTOCOL-V2.md).

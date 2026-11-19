@@ -25,6 +25,35 @@ THERMODYNAMIC_FIELDS = (
 )
 
 
+def first_passage_time(
+    rows: list[dict[str, float]],
+    field: str,
+    threshold: float,
+) -> float | None:
+    """Return the first sampled time at or above ``threshold``."""
+
+    return next(
+        (row["time"] for row in rows if row[field] >= threshold),
+        None,
+    )
+
+
+def first_joint_passage_time(
+    rows: list[dict[str, float]],
+    thresholds: dict[str, float],
+) -> float | None:
+    """Return the first time every declared threshold is reached together."""
+
+    return next(
+        (
+            row["time"]
+            for row in rows
+            if all(row[field] >= threshold for field, threshold in thresholds.items())
+        ),
+        None,
+    )
+
+
 def scalar_log(frame: Any, quantity: str) -> float:
     log = frame.log or {}
     matches = [name for name in log if name.endswith(f"/{quantity}")]
@@ -102,13 +131,33 @@ def analyze(
         [row["orientational_order"] for row in rows],
         label=f"|psi_{config.orientational_order}|",
     )
+    axes[1, 1].plot(
+        times,
+        [row["local_bond_order_6"] for row in rows],
+        label="local bond order |psi_6|",
+    )
+    axes[1, 1].plot(
+        times,
+        [row["coordination_3_fraction"] for row in rows],
+        label="degree 3 fraction",
+    )
     axes[1, 1].set(title="Structural order", xlabel="time")
     axes[1, 1].legend()
+    if config.magnetic_field is not None and config.magnetic_start_step > 0:
+        activation_time = config.magnetic_start_step * config.dt
+        for axis in axes.flat:
+            axis.axvline(
+                activation_time,
+                color="#674ea7",
+                linestyle=":",
+                alpha=0.75,
+            )
     figure.suptitle("Cohesian emergence — HOOMD benchmark")
     figure_path = output_directory / "observables.png"
     figure.savefig(figure_path, dpi=180)
     plt.close(figure)
 
+    peak = max(rows, key=lambda row: row["largest_component_fraction"])
     summary = {
         "frames": len(rows),
         "final_time": rows[-1]["time"],
@@ -118,11 +167,57 @@ def analyze(
         "maximum_largest_component_fraction": max(
             row["largest_component_fraction"] for row in rows
         ),
+        "peak_component_time": peak["time"],
+        "time_to_component_0_25": first_passage_time(
+            rows, "largest_component_fraction", 0.25
+        ),
+        "time_to_component_0_50": first_passage_time(
+            rows, "largest_component_fraction", 0.50
+        ),
         "final_mean_degree": rows[-1]["mean_degree"],
         "final_orientational_order": rows[-1]["orientational_order"],
+        "final_local_bond_order_6": rows[-1]["local_bond_order_6"],
+        "final_global_bond_order_6": rows[-1]["global_bond_order_6"],
+        "time_to_connected_global_order_0_50": first_joint_passage_time(
+            rows,
+            {
+                "largest_component_fraction": 0.50,
+                "global_bond_order_6": 0.50,
+            },
+        ),
+        "final_coordination_3_fraction": rows[-1]["coordination_3_fraction"],
+        "final_coordination_6_fraction": rows[-1]["coordination_6_fraction"],
+        "final_local_bond_order_6": rows[-1]["local_bond_order_6"],
+        "final_global_bond_order_6": rows[-1]["global_bond_order_6"],
+        "final_coordination_3_fraction": rows[-1]["coordination_3_fraction"],
         "observables": str(csv_path.resolve()),
         "figure": str(figure_path.resolve()),
     }
+    if config.magnetic_field is not None:
+        activation_time = config.magnetic_start_step * config.dt
+        activation_row = min(
+            rows,
+            key=lambda row: abs(row["time"] - activation_time),
+        )
+        summary.update(
+            {
+                "field_activation_time": activation_time,
+                "global_bond_order_6_at_field_activation": activation_row[
+                    "global_bond_order_6"
+                ],
+                "field_global_bond_order_6_change": (
+                    rows[-1]["global_bond_order_6"]
+                    - activation_row["global_bond_order_6"]
+                ),
+                "coordination_3_at_field_activation": activation_row[
+                    "coordination_3_fraction"
+                ],
+                "field_coordination_3_change": (
+                    rows[-1]["coordination_3_fraction"]
+                    - activation_row["coordination_3_fraction"]
+                ),
+            }
+        )
     (output_directory / "summary.json").write_text(
         json.dumps(summary, indent=2) + "\n",
         encoding="utf-8",

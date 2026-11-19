@@ -25,6 +25,10 @@ render = "python render.py --config experiment.toml --trajectory outputs/traject
 experiment = { depends-on = ["simulate", "analyze", "render"] }
 baseline = "python simulate.py --config baseline.toml --output outputs/baseline && python analyze.py --config baseline.toml --trajectory outputs/baseline/trajectory.gsd --output outputs/baseline && python render.py --config baseline.toml --trajectory outputs/baseline/trajectory.gsd --output outputs/baseline"
 study = "python study.py --study study.toml --output outputs/study"
+assembly-smoke = "python assembly_study.py --study assembly.toml --output outputs/assembly-smoke --quick"
+assembly-study = "python assembly_study.py --study assembly.toml --output outputs/assembly"
+assembly-video = "python animate_assembly.py --root outputs/assembly --output outputs/assembly/assembly-comparison.mp4"
+assembly-lab = "jupyter lab docs/practical/assembly-lab.ipynb"
 notebook-build = "python build_notebook.py"
 notebook-execute = "jupyter nbconvert --execute --to notebook --inplace notebooks/02-controlled-emergence-study.ipynb --ExecutePreprocessor.timeout=600"
 notebook-publish = "python publish_study.py"

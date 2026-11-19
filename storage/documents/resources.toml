@@ -10,7 +10,7 @@ protocol = "markdown-file@1"
 sha256 = "773afa5cb10a0b3eafffef2b0300c2e9918cebb487e8868e7a812651f52dfd5a"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-computer-science/L-composite/E-01-carbon-binder.md" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-computer-science/L-composite/E-01-carbon-binder.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-computer-science/L-composite/E-01-carbon-binder.md" },
 ]
 
 [[resource]]
@@ -21,7 +21,7 @@ protocol = "markdown-file@1"
 sha256 = "6139447750e57344dadea3cb037670a544aeb2a10b7014edf9b68ffa7bf4ba2e"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-computer-science/L-composite/E-02-type-binder.md" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-computer-science/L-composite/E-02-type-binder.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-computer-science/L-composite/E-02-type-binder.md" },
 ]
 
 [[resource]]
@@ -32,7 +32,7 @@ protocol = "markdown-file@1"
 sha256 = "a9b82668180d008789bf8bddb3f23c39c15a243b8f52c2ddcccccc6404439ae3"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-computer-science/L-composite/E-03-query-binder.md" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-computer-science/L-composite/E-03-query-binder.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-computer-science/L-composite/E-03-query-binder.md" },
 ]
 
 [[resource]]
@@ -43,7 +43,7 @@ protocol = "markdown-file@1"
 sha256 = "f5a2bf90678079d50b25c819bb71aac7bf8d929ae2b90e71a752ab16d5b8d222"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-computer-science/L-composite/E-04-TLE-composite.md" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-computer-science/L-composite/E-04-TLE-composite.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-computer-science/L-composite/E-04-TLE-composite.md" },
 ]
 
 [[resource]]
@@ -54,7 +54,7 @@ protocol = "markdown-file@1"
 sha256 = "338db37083f8d1b6e3becd40e1ab18bf92cdc34671e0ed59523580730cdb7839"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-computer-science/L-functions/E-01-function.md" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-computer-science/L-functions/E-01-function.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-computer-science/L-functions/E-01-function.md" },
 ]
 
 [[resource]]
@@ -65,7 +65,7 @@ protocol = "markdown-file@1"
 sha256 = "f0ea980f00faf605b704dda44044d77a4cb6276cd754da98150068589a2ce641"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-computer-science/L-functions/E-02-execution.md" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-computer-science/L-functions/E-02-execution.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-computer-science/L-functions/E-02-execution.md" },
 ]
 
 [[resource]]
@@ -76,7 +76,7 @@ protocol = "markdown-file@1"
 sha256 = "3a589598ad499fd1ade7eee6335342716df689710d145430a672c6f00927d105"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-computer-science/L-functions/E-03-function-network.md" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-computer-science/L-functions/E-03-function-network.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-computer-science/L-functions/E-03-function-network.md" },
 ]
 
 [[resource]]
@@ -87,7 +87,7 @@ protocol = "markdown-file@1"
 sha256 = "9b2338e13a10a51d3154d87dee61bc4b357dc884f4fee4d9e30e8e6df55f0380"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-computer-science/L-functions/E-04-function-natural-wrappers.md" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-computer-science/L-functions/E-04-function-natural-wrappers.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-computer-science/L-functions/E-04-function-natural-wrappers.md" },
 ]
 
 [[resource]]
@@ -98,7 +98,7 @@ protocol = "markdown-file@1"
 sha256 = "7aaef738695f2024b39fdde02de82e9487b7dc70f1084aa6ade888667b67db02"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-computer-science/L-functions/Ed-function-orchestration.md" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-computer-science/L-functions/Ed-function-orchestration.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-computer-science/L-functions/Ed-function-orchestration.md" },
 ]
 
 [[resource]]
@@ -109,7 +109,7 @@ protocol = "markdown-file@1"
 sha256 = "fd6042869f969d29e491ab7131d881697404be9593315e518de5ebc9e8a15938"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-computer-science/L-inference/E-01-theorem.md" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-computer-science/L-inference/E-01-theorem.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-computer-science/L-inference/E-01-theorem.md" },
 ]
 
 [[resource]]
@@ -120,7 +120,7 @@ protocol = "markdown-file@1"
 sha256 = "1ba23fb01fba33acf2e515d796b9ee803f662ce0e864f2d0726443a3fc7a762f"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-computer-science/L-inference/E-02-agents.md" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-computer-science/L-inference/E-02-agents.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-computer-science/L-inference/E-02-agents.md" },
 ]
 
 [[resource]]
@@ -131,7 +131,7 @@ protocol = "markdown-file@1"
 sha256 = "91c23f04317a3bcbef9d90948c491a4c9342dc156f78784aca55346f2f9dcf31"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-computer-science/L-inference/E-03-conclusions.md" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-computer-science/L-inference/E-03-conclusions.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-computer-science/L-inference/E-03-conclusions.md" },
 ]
 
 [[resource]]
@@ -142,7 +142,7 @@ protocol = "markdown-file@1"
 sha256 = "d97ff90197c3aa3766f138338365e938872996d331b5730777b1261333060dcd"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-computer-science/L-semantics/E-01-data-semantics.md" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-computer-science/L-semantics/E-01-data-semantics.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-computer-science/L-semantics/E-01-data-semantics.md" },
 ]
 
 [[resource]]
@@ -153,7 +153,7 @@ protocol = "markdown-file@1"
 sha256 = "8e1aa0172a3f21d8a88ebec00f2dfb261d754efa1ac16d4ad968585c1cecdd69"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-computer-science/L-semantics/E-02-json-representation.md" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-computer-science/L-semantics/E-02-json-representation.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-computer-science/L-semantics/E-02-json-representation.md" },
 ]
 
 [[resource]]
@@ -164,7 +164,7 @@ protocol = "markdown-file@1"
 sha256 = "62ebb329955bdd27158918b1eb76ca87aac7656c6cc9e063ef2ff8195126bfdc"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-computer-science/L-semantics/E-03-agent-prompt.md" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-computer-science/L-semantics/E-03-agent-prompt.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-computer-science/L-semantics/E-03-agent-prompt.md" },
 ]
 
 [[resource]]
@@ -175,7 +175,7 @@ protocol = "jupyter-notebook-file@1"
 sha256 = "95f81c60107724ecbd84806466ff48a7883e581d82882dd988c86db16fc54136"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-computer-science/T-mechanics/L-sparse-ticker-state/E-sparse_ticker_state_ledger.ipynb" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-computer-science/T-mechanics/L-sparse-ticker-state/E-sparse_ticker_state_ledger.ipynb" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-computer-science/T-mechanics/L-sparse-ticker-state/E-sparse_ticker_state_ledger.ipynb" },
 ]
 
 [[resource]]
@@ -186,7 +186,7 @@ protocol = "markdown-file@1"
 sha256 = "9dfffb2d7135825abd9dc41b5eaef698a09eb39d028c74ec9588f68f530c8a4e"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-computer-science/T-mechanics/L-sparse-ticker-state/E-sparse_ticker_state_ledger.md" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-computer-science/T-mechanics/L-sparse-ticker-state/E-sparse_ticker_state_ledger.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-computer-science/T-mechanics/L-sparse-ticker-state/E-sparse_ticker_state_ledger.md" },
 ]
 
 [[resource]]
@@ -197,7 +197,7 @@ protocol = "markdown-file@1"
 sha256 = "c5588b909ea1117d8bbb73acef1a2d9ee76117b4f4b30c305f818e5c8d6091dd"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-computer-science/T-networking/L-DNS/E-01-introduction.md" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-computer-science/T-networking/L-DNS/E-01-introduction.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-computer-science/T-networking/L-DNS/E-01-introduction.md" },
 ]
 
 [[resource]]
@@ -208,7 +208,7 @@ protocol = "markdown-file@1"
 sha256 = "be37d06022ee5760525b025147f8d6f01e38f6d5fe7b4744103da208957d6ad7"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-math/L-division/E-01-introduction.md" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/L-division/E-01-introduction.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-math/L-division/E-01-introduction.md" },
 ]
 
 [[resource]]
@@ -219,7 +219,7 @@ protocol = "markdown-file@1"
 sha256 = "1d93b58e1a311b0910886a0d04ff843c48ba681dc3e51627dd4f67a1e40ddd98"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-math/L-exponential-phase/E-01-branching-depth-resolution.md" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/L-exponential-phase/E-01-branching-depth-resolution.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-math/L-exponential-phase/E-01-branching-depth-resolution.md" },
 ]
 
 [[resource]]
@@ -230,7 +230,7 @@ protocol = "markdown-file@1"
 sha256 = "ba15bc875e46ad91d83532bcf994f8c3b494a954f7eb3147b910c93584d8f7ea"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-math/L-exponential-phase/E-02-discrete-phase-rulers.md" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/L-exponential-phase/E-02-discrete-phase-rulers.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-math/L-exponential-phase/E-02-discrete-phase-rulers.md" },
 ]
 
 [[resource]]
@@ -241,7 +241,7 @@ protocol = "markdown-file@1"
 sha256 = "4917e15fe7b7b3aa7cf930227ea4362fa89cab8f8a9acd547cd37ebb0cf5c43e"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-math/L-exponential-phase/E-03-hidden-generators.md" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/L-exponential-phase/E-03-hidden-generators.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-math/L-exponential-phase/E-03-hidden-generators.md" },
 ]
 
 [[resource]]
@@ -252,7 +252,7 @@ protocol = "jupyter-notebook-file@1"
 sha256 = "4be37652bdcadb4588ed059fa13ba60b4a49e3ed2954ec5778a1abc7f07227b5"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-math/L-exponential-phase/Ed-exponential-phase-visual-notebook.ipynb" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/L-exponential-phase/Ed-exponential-phase-visual-notebook.ipynb" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-math/L-exponential-phase/Ed-exponential-phase-visual-notebook.ipynb" },
 ]
 
 [[resource]]
@@ -263,7 +263,7 @@ protocol = "markdown-file@1"
 sha256 = "2931a4938101986597be63d106485d3821ea4187e24848e6742f0adc6f1d31da"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-math/T-linear-algebra/T-vectors/L-basis/E-01-introduction.md" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/T-vectors/L-basis/E-01-introduction.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/T-vectors/L-basis/E-01-introduction.md" },
 ]
 
 [[resource]]
@@ -274,7 +274,7 @@ protocol = "markdown-file@1"
 sha256 = "b5e26976328961842f4c52618ccc7851c049860311d2b46046b6933462d89109"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-math/T-linear-algebra/T-vectors/L-reflection/E-01-introduction.md" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/T-vectors/L-reflection/E-01-introduction.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/T-vectors/L-reflection/E-01-introduction.md" },
 ]
 
 [[resource]]
@@ -285,7 +285,7 @@ protocol = "markdown-file@1"
 sha256 = "820e6e7f12c18ad02629e143c66ef3f5ecb5738aee663e66e0d22198a4bb85cb"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-physics/L-emergence/L-patchy-particle-emergence/E-00-purpose-and-boundary.md" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-physics/L-emergence/L-patchy-particle-emergence/E-00-purpose-and-boundary.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-physics/L-emergence/L-patchy-particle-emergence/E-00-purpose-and-boundary.md" },
 ]
 
 [[resource]]
@@ -296,7 +296,7 @@ protocol = "markdown-file@1"
 sha256 = "6ef42cc9793fec56f85bd59632c07fe50638efc1f25af9f7e79e0bdd92a2488d"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-physics/L-emergence/L-patchy-particle-emergence/E-01-microscopic-model.md" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-physics/L-emergence/L-patchy-particle-emergence/E-01-microscopic-model.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-physics/L-emergence/L-patchy-particle-emergence/E-01-microscopic-model.md" },
 ]
 
 [[resource]]
@@ -307,7 +307,7 @@ protocol = "markdown-file@1"
 sha256 = "232d9cda944583ab77d7e1ecd40610be6dcc41a81c55bc39ccf124b38a1b4544"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-physics/L-emergence/L-patchy-particle-emergence/E-02-local-rules-and-parameters.md" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-physics/L-emergence/L-patchy-particle-emergence/E-02-local-rules-and-parameters.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-physics/L-emergence/L-patchy-particle-emergence/E-02-local-rules-and-parameters.md" },
 ]
 
 [[resource]]
@@ -318,7 +318,7 @@ protocol = "markdown-file@1"
 sha256 = "6f63aa67de4a6b86b5d7b051d4bf09d03d81319a846ca784a06aaf7069eee1d5"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-physics/L-emergence/L-patchy-particle-emergence/E-03-macroscopic-observables.md" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-physics/L-emergence/L-patchy-particle-emergence/E-03-macroscopic-observables.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-physics/L-emergence/L-patchy-particle-emergence/E-03-macroscopic-observables.md" },
 ]
 
 [[resource]]
@@ -339,7 +339,7 @@ protocol = "jupyter-notebook-file@1"
 sha256 = "0a870281e08909b4552c16b106f34425e78e203a3d53c7483a088f0a830760de"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-physics/L-emergence/L-patchy-particle-emergence/E-04-experimental-laboratory.ipynb" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-physics/L-emergence/L-patchy-particle-emergence/E-04-experimental-laboratory.ipynb" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-physics/L-emergence/L-patchy-particle-emergence/E-04-experimental-laboratory.ipynb" },
 ]
 
 [[resource]]
@@ -350,7 +350,7 @@ protocol = "markdown-file@1"
 sha256 = "4fe07d68bc33fae4d5458eb1a06928ab4ce52962361d6c968cdda5b5dd6cfb38"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-physics/L-emergence/L-patchy-particle-emergence/E-05-findings-and-limitations.md" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-physics/L-emergence/L-patchy-particle-emergence/E-05-findings-and-limitations.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-physics/L-emergence/L-patchy-particle-emergence/E-05-findings-and-limitations.md" },
 ]
 
 [[resource]]
@@ -361,7 +361,7 @@ protocol = "markdown-file@1"
 sha256 = "f5f3a7b384651843e9843b9db06bc79acb6828e42a68942ecdd7ff60b60590bb"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-math/L-division/E-02-partitive-division.md" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/L-division/E-02-partitive-division.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-math/L-division/E-02-partitive-division.md" },
 ]
 
 [[resource]]
@@ -372,7 +372,7 @@ protocol = "markdown-file@1"
 sha256 = "008c14506b290d9fc5284833b281082d5d081c45056487e617b2472a22557b6c"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-math/L-division/E-03-quotative-division.md" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/L-division/E-03-quotative-division.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-math/L-division/E-03-quotative-division.md" },
 ]
 
 [[resource]]
@@ -383,7 +383,7 @@ protocol = "markdown-file@1"
 sha256 = "4d6d2972b1de877a4566fc164867bf9f400bf99bd322ff18ac4090a130f7dc78"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-math/L-division/E-04-when-the-dividend-is-smaller.md" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/L-division/E-04-when-the-dividend-is-smaller.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-math/L-division/E-04-when-the-dividend-is-smaller.md" },
 ]
 
 [[resource]]
@@ -394,7 +394,7 @@ protocol = "jupyter-notebook-file@1"
 sha256 = "7e6fb7d519acc0b558a2c807bb43db824ab314ea15575cec8b5732a06437e2ff"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-math/L-division/E-05-visual-laboratory.ipynb" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/L-division/E-05-visual-laboratory.ipynb" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-math/L-division/E-05-visual-laboratory.ipynb" },
 ]
 
 [[resource]]
@@ -405,7 +405,7 @@ protocol = "markdown-file@1"
 sha256 = "c5d382caa83fc81744905f45fa85bfebf2a1d77d8a90a84c18a8f6d15c16e10c"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-math/T-calculus/L-local-change-and-accumulation/E-01-finite-change.md" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/T-calculus/L-local-change-and-accumulation/E-01-finite-change.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-math/T-calculus/L-local-change-and-accumulation/E-01-finite-change.md" },
 ]
 
 [[resource]]
@@ -416,7 +416,7 @@ protocol = "markdown-file@1"
 sha256 = "27eaa4220ea2cf0cf169ec721ae1b82e72ed6f815896194f02308bef1ccdf906"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-math/T-calculus/L-local-change-and-accumulation/E-02-the-derivative.md" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/T-calculus/L-local-change-and-accumulation/E-02-the-derivative.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-math/T-calculus/L-local-change-and-accumulation/E-02-the-derivative.md" },
 ]
 
 [[resource]]
@@ -427,7 +427,7 @@ protocol = "markdown-file@1"
 sha256 = "aa646ca3e4ecbb00b740da3d74bb3b1e25d2fdffbf23d0ff17a9d7107690757b"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-math/T-calculus/L-local-change-and-accumulation/E-03-a-field-of-local-rules.md" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/T-calculus/L-local-change-and-accumulation/E-03-a-field-of-local-rules.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-math/T-calculus/L-local-change-and-accumulation/E-03-a-field-of-local-rules.md" },
 ]
 
 [[resource]]
@@ -438,7 +438,7 @@ protocol = "markdown-file@1"
 sha256 = "28377abb2eb871589ce5efe4427ad7afb36d333f65458cffddef1fcbf6fd7cf9"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-math/T-calculus/L-local-change-and-accumulation/E-04-reconstruction-by-integration.md" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/T-calculus/L-local-change-and-accumulation/E-04-reconstruction-by-integration.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-math/T-calculus/L-local-change-and-accumulation/E-04-reconstruction-by-integration.md" },
 ]
 
 [[resource]]
@@ -449,7 +449,7 @@ protocol = "jupyter-notebook-file@1"
 sha256 = "edfa41111f40ebb0b8a9fe65d5f20424d1bb92984d4f5a486dddbb7b6f91f36d"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-math/T-calculus/L-local-change-and-accumulation/E-05-visual-laboratory.ipynb" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/T-calculus/L-local-change-and-accumulation/E-05-visual-laboratory.ipynb" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-math/T-calculus/L-local-change-and-accumulation/E-05-visual-laboratory.ipynb" },
 ]
 
 [[resource]]
@@ -460,7 +460,7 @@ protocol = "markdown-file@1"
 sha256 = "0167d9610172cda7453b99f130dcdbc44a4795448d0601163e64fcddbd45544f"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-math/T-linear-algebra/L-foundations/E-01-scalars-and-fields.md" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/L-foundations/E-01-scalars-and-fields.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/L-foundations/E-01-scalars-and-fields.md" },
 ]
 
 [[resource]]
@@ -471,7 +471,7 @@ protocol = "markdown-file@1"
 sha256 = "f38217c929a9d37bb506f39a982df08ad511b90b71d473af1c3902e5b89a1b8d"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-math/T-linear-algebra/L-foundations/E-02-vector-spaces.md" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/L-foundations/E-02-vector-spaces.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/L-foundations/E-02-vector-spaces.md" },
 ]
 
 [[resource]]
@@ -482,7 +482,7 @@ protocol = "markdown-file@1"
 sha256 = "5d09a1ff0da266265109b6eadccf0edc1bd7eae40282c1ef8badceec13a8aa1c"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-math/T-linear-algebra/L-foundations/E-03-linear-combinations.md" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/L-foundations/E-03-linear-combinations.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/L-foundations/E-03-linear-combinations.md" },
 ]
 
 [[resource]]
@@ -493,7 +493,7 @@ protocol = "markdown-file@1"
 sha256 = "8cc4e7e658ecc22e9d348aa0be303d73aa381fd8c3e6306f90fc7226e1eb763e"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-math/T-linear-algebra/T-vectors/L-vector-operations/E-01-addition-and-subtraction.md" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/T-vectors/L-vector-operations/E-01-addition-and-subtraction.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/T-vectors/L-vector-operations/E-01-addition-and-subtraction.md" },
 ]
 
 [[resource]]
@@ -504,7 +504,7 @@ protocol = "markdown-file@1"
 sha256 = "91485f957263aef5695723d3fe0935d94eb6ec258e4a6b7df0eb00a45e7be356"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-math/T-linear-algebra/T-vectors/L-vector-operations/E-02-scalar-multiplication.md" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/T-vectors/L-vector-operations/E-02-scalar-multiplication.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/T-vectors/L-vector-operations/E-02-scalar-multiplication.md" },
 ]
 
 [[resource]]
@@ -515,7 +515,7 @@ protocol = "markdown-file@1"
 sha256 = "c6fda9774f9b59caf651d687175e0afd8375ff00a88728f09a1e0450cdaf5aa1"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-math/T-linear-algebra/T-vectors/L-vector-operations/E-03-magnitude-direction-and-dot-product.md" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/T-vectors/L-vector-operations/E-03-magnitude-direction-and-dot-product.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/T-vectors/L-vector-operations/E-03-magnitude-direction-and-dot-product.md" },
 ]
 
 [[resource]]
@@ -526,7 +526,7 @@ protocol = "jupyter-notebook-file@1"
 sha256 = "bd5f9fd3ce04d923632d3bf0199959f8469a7ba509cbc6725a2063cfae0f34ef"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-math/T-linear-algebra/T-vectors/L-vector-operations/E-04-vector-laboratory.ipynb" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/T-vectors/L-vector-operations/E-04-vector-laboratory.ipynb" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/T-vectors/L-vector-operations/E-04-vector-laboratory.ipynb" },
 ]
 
 [[resource]]
@@ -537,7 +537,7 @@ protocol = "jupyter-notebook-file@1"
 sha256 = "da8afb52413e509405a7e33c8a4329d1f84d0bffdd09471c511b9ad9fcb3b3fc"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-math/T-linear-algebra/T-vectors/L-basis/E-02-basis-laboratory.ipynb" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/T-vectors/L-basis/E-02-basis-laboratory.ipynb" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/T-vectors/L-basis/E-02-basis-laboratory.ipynb" },
 ]
 
 [[resource]]
@@ -548,7 +548,7 @@ protocol = "markdown-file@1"
 sha256 = "f97493b1266de2465635731b2d18e0fdd3bf844a13fb7b1237c1a5a5a0662860"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-math/T-linear-algebra/T-vectors/L-reflection/E-02-constructing-the-matrix.md" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/T-vectors/L-reflection/E-02-constructing-the-matrix.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/T-vectors/L-reflection/E-02-constructing-the-matrix.md" },
 ]
 
 [[resource]]
@@ -559,7 +559,7 @@ protocol = "markdown-file@1"
 sha256 = "f429d97381cded0405633ab83f3a6e9c3317fae3c026f97c93ccdf78b5febad9"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-math/T-linear-algebra/T-vectors/L-reflection/E-03-eigendirections-and-invariants.md" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/T-vectors/L-reflection/E-03-eigendirections-and-invariants.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/T-vectors/L-reflection/E-03-eigendirections-and-invariants.md" },
 ]
 
 [[resource]]
@@ -570,7 +570,7 @@ protocol = "jupyter-notebook-file@1"
 sha256 = "c6392f08271ce0731d07bec88b98ccccad9817926dfaa04a40908ede68ef9f15"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-math/T-linear-algebra/T-vectors/L-reflection/E-04-reflection-laboratory.ipynb" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/T-vectors/L-reflection/E-04-reflection-laboratory.ipynb" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/T-vectors/L-reflection/E-04-reflection-laboratory.ipynb" },
 ]
 
 [[resource]]
@@ -581,7 +581,7 @@ protocol = "markdown-file@1"
 sha256 = "8144aeb4e5d5ff52a3d4941748137a518549e822bf177672240f6453431bdd58"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-math/T-linear-algebra/L-linear-transformations/E-01-transforming-a-basis.md" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/L-linear-transformations/E-01-transforming-a-basis.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/L-linear-transformations/E-01-transforming-a-basis.md" },
 ]
 
 [[resource]]
@@ -592,7 +592,7 @@ protocol = "markdown-file@1"
 sha256 = "42ccfa7eab28edeb48a20a014d41086268b07aaaed6cee292adf708da5d0a7e1"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-math/T-linear-algebra/L-linear-transformations/E-02-matrices-as-linear-maps.md" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/L-linear-transformations/E-02-matrices-as-linear-maps.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/L-linear-transformations/E-02-matrices-as-linear-maps.md" },
 ]
 
 [[resource]]
@@ -603,7 +603,7 @@ protocol = "markdown-file@1"
 sha256 = "5a695ba41228d87e03fd5c6a316027b8881429a31302c8d04360596747191137"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-math/T-linear-algebra/L-linear-transformations/E-03-two-views-of-matrix-multiplication.md" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/L-linear-transformations/E-03-two-views-of-matrix-multiplication.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/L-linear-transformations/E-03-two-views-of-matrix-multiplication.md" },
 ]
 
 [[resource]]
@@ -614,7 +614,7 @@ protocol = "markdown-file@1"
 sha256 = "04848c494f01ac256c2ec6abe67de0c8b9dee6e66eb739a157a365defad9ef8a"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-math/T-linear-algebra/L-linear-transformations/E-04-image-kernel-and-rank.md" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/L-linear-transformations/E-04-image-kernel-and-rank.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/L-linear-transformations/E-04-image-kernel-and-rank.md" },
 ]
 
 [[resource]]
@@ -625,7 +625,7 @@ protocol = "jupyter-notebook-file@1"
 sha256 = "07291719916b5cc9d84d97a100b92c4f27772121ee90a671302db48dec233437"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-math/T-linear-algebra/L-linear-transformations/E-05-transformation-laboratory.ipynb" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/L-linear-transformations/E-05-transformation-laboratory.ipynb" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/L-linear-transformations/E-05-transformation-laboratory.ipynb" },
 ]
 
 [[resource]]
@@ -636,7 +636,7 @@ protocol = "markdown-file@1"
 sha256 = "abc54daf57ee8d5c5f980f538c76140c29b5497044a34132af8c35672f58ba91"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-math/T-linear-algebra/L-tensors/E-01-from-linear-to-multilinear.md" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/L-tensors/E-01-from-linear-to-multilinear.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/L-tensors/E-01-from-linear-to-multilinear.md" },
 ]
 
 [[resource]]
@@ -647,7 +647,7 @@ protocol = "markdown-file@1"
 sha256 = "8aea48dcac0dbf624454c1e4173ab11c60c8242d75c422169043dbe3281523b8"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-math/T-linear-algebra/L-tensors/E-02-components-order-and-shape.md" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/L-tensors/E-02-components-order-and-shape.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/L-tensors/E-02-components-order-and-shape.md" },
 ]
 
 [[resource]]
@@ -658,7 +658,7 @@ protocol = "markdown-file@1"
 sha256 = "499d73f73590578e47dda2389264fb582dfc3421358f89f8c4abad801fc6725c"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-math/T-linear-algebra/L-tensors/E-03-basis-independent-objects.md" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/L-tensors/E-03-basis-independent-objects.md" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/L-tensors/E-03-basis-independent-objects.md" },
 ]
 
 [[resource]]
@@ -669,5 +669,5 @@ protocol = "jupyter-notebook-file@1"
 sha256 = "2f005f0ca8825ab4bf500f7d14c9295f5a9fe086bfc8458bdd00b5e2bc91e0d1"
 locations = [
   { store = "local", relation = "exact", location = "storage/documents/local/T-math/T-linear-algebra/L-tensors/E-04-tensor-laboratory.ipynb" },
-  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/Cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/L-tensors/E-04-tensor-laboratory.ipynb" },
+  { store = "github", relation = "exact", uri = "https://raw.githubusercontent.com/cohesian/research/main/storage/documents/local/T-math/T-linear-algebra/L-tensors/E-04-tensor-laboratory.ipynb" },
 ]

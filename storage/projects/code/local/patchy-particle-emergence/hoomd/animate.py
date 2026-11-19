@@ -14,7 +14,13 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 from config import ExperimentConfig, load_config
-from metrics import contact_edges, quaternion_angles, rotated_directors
+from metrics import (
+    bond_orientational_order,
+    contact_edges,
+    coordination_fractions,
+    quaternion_angles,
+    rotated_directors,
+)
 from render import TYPE_COLORS, largest_component_nodes
 
 
@@ -40,6 +46,9 @@ class AnimationFrame:
     largest_fraction: float
     mean_degree: float
     orientational_order: float
+    local_bond_order_6: float
+    global_bond_order_6: float
+    coordination_3_fraction: float
 
 
 def load_frames(
@@ -72,6 +81,12 @@ def load_frames(
             order = abs(
                 np.mean(np.exp(1j * config.orientational_order * angles))
             )
+            local_sixfold, global_sixfold = bond_orientational_order(
+                positions,
+                edges,
+                symmetry=6,
+            )
+            coordination = coordination_fractions(len(positions), edges)
             frames.append(
                 AnimationFrame(
                     time=float(frame.configuration.step) * config.dt,
@@ -84,6 +99,9 @@ def load_frames(
                     largest_fraction=len(component) / len(positions),
                     mean_degree=2.0 * len(edges) / len(positions),
                     orientational_order=float(order),
+                    local_bond_order_6=local_sixfold,
+                    global_bond_order_6=global_sixfold,
+                    coordination_3_fraction=coordination[3],
                 )
             )
     if not frames:

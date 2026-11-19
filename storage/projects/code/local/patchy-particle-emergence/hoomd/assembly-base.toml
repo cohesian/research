@@ -1,0 +1,39 @@
+[simulation]
+seed = 41
+dt = 0.002
+steps = 180000
+write_period = 300
+temperature = 0.18
+linear_drag = 1.0
+angular_drag = 0.5
+
+[geometry]
+box_length = 23.0
+wall_half_extent = 10.5
+particle_radius = 0.5
+particle_mass = 1.0
+minimum_initial_distance = 1.5
+
+[initialization]
+method = "blue_noise"
+candidate_pool = 96
+
+[population]
+P3 = 96
+
+[interaction]
+mode = "patchy"
+repulsion_energy = 1.0
+patch_attraction = 5.0
+patch_range = 1.0
+patch_cutoff = 1.75
+patch_half_angle = 0.22
+patch_steepness = 60.0
+
+[field]
+enabled = false
+
+[analysis]
+contact_cutoff = 1.45
+minimum_patch_alignment = 0.95
+orientational_order = 3

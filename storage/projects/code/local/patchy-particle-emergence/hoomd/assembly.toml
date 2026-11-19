@@ -1,0 +1,39 @@
+[study]
+base_config = "assembly-base.toml"
+seeds = [41]
+reference_count = 96
+
+# The first three runs isolate interaction symmetry and the external field at
+# fixed population, density, temperature, and integration time.
+[[run]]
+name = "isotropic"
+particle_count = 96
+interaction = "isotropic"
+field_strength = 0.0
+
+[[run]]
+name = "three-patch"
+particle_count = 96
+interaction = "patchy"
+field_strength = 0.0
+
+[[run]]
+name = "three-patch--delayed-field"
+particle_count = 96
+interaction = "patchy"
+field_strength = 3.0
+field_start_fraction = 0.5
+
+# These two additional runs ask whether a larger open network takes longer to
+# become one coherent connected domain. Density remains approximately fixed.
+[[run]]
+name = "three-patch--small"
+particle_count = 48
+interaction = "patchy"
+field_strength = 0.0
+
+[[run]]
+name = "three-patch--large"
+particle_count = 192
+interaction = "patchy"
+field_strength = 0.0

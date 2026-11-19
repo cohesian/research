@@ -9,8 +9,8 @@ description = "Standalone Loci scene for the Carbon Binder k-graph resource"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
-    "loci @ git+ssh://git@github.com/Cohesian/loci.git@e25c0b3782b62e4b4d46ead79996b7c60feb56e2",
-    "loci-plugins @ git+ssh://git@github.com/Cohesian/loci-plugins.git@b1c5c38eaf7d3a633f4c7fa500009b0121f900ac",
+    "loci @ git+ssh://git@github.com/cohesian-tools/loci.git@e25c0b3782b62e4b4d46ead79996b7c60feb56e2",
+    "loci-plugins @ git+ssh://git@github.com/cohesian-tools/loci-plugins.git@b1c5c38eaf7d3a633f4c7fa500009b0121f900ac",
     "manim==0.21.0",
     "manim-voiceover[openai,transcribe,gtts]==0.4.0",
 ]

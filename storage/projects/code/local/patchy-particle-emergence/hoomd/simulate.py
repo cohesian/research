@@ -102,7 +102,10 @@ def build_snapshot(hoomd: object, config: ExperimentConfig) -> object:
     return snapshot
 
 
-def configure_forces(hoomd: object, config: ExperimentConfig) -> list[object]:
+def configure_forces(
+    hoomd: object,
+    config: ExperimentConfig,
+) -> tuple[list[object], object | None]:
     neighbor_list = hoomd.md.nlist.Cell(buffer=0.4)
     repulsive_cutoff = 2.0 ** (1.0 / 6.0) * config.particle_diameter
     repulsion = hoomd.md.pair.LJ(
@@ -110,29 +113,40 @@ def configure_forces(hoomd: object, config: ExperimentConfig) -> list[object]:
         default_r_cut=repulsive_cutoff,
         mode="shift",
     )
-    attraction = hoomd.md.pair.aniso.PatchyGaussian(
-        nlist=neighbor_list,
-        default_r_cut=config.patch_cutoff,
-        mode="shift",
-    )
-    envelope_params = {
-        "alpha": config.patch_half_angle,
-        "omega": config.patch_steepness,
-    }
+    if config.interaction_mode == "patchy":
+        attraction = hoomd.md.pair.aniso.PatchyGaussian(
+            nlist=neighbor_list,
+            default_r_cut=config.patch_cutoff,
+            mode="shift",
+        )
+    else:
+        attraction = hoomd.md.pair.Gaussian(
+            nlist=neighbor_list,
+            default_r_cut=config.patch_cutoff,
+            mode="shift",
+        )
+    envelope_params = {"alpha": config.patch_half_angle, "omega": config.patch_steepness}
     for pair in combinations_with_replacement(config.particle_types, 2):
         repulsion.params[pair] = {
             "epsilon": config.repulsion_energy,
             "sigma": config.particle_diameter,
         }
-        attraction.params[pair] = {
-            "pair_params": {
+        if config.interaction_mode == "patchy":
+            attraction.params[pair] = {
+                "pair_params": {
+                    "epsilon": -config.attraction_for(*pair),
+                    "sigma": config.patch_range,
+                },
+                "envelope_params": envelope_params,
+            }
+        else:
+            attraction.params[pair] = {
                 "epsilon": -config.attraction_for(*pair),
                 "sigma": config.patch_range,
-            },
-            "envelope_params": envelope_params,
-        }
-    for particle_type in config.particle_types:
-        attraction.directors[particle_type] = list(config.directors(particle_type))
+            }
+    if config.interaction_mode == "patchy":
+        for particle_type in config.particle_types:
+            attraction.directors[particle_type] = list(config.directors(particle_type))
 
     walls = [
         hoomd.wall.Plane(
@@ -159,7 +173,23 @@ def configure_forces(hoomd: object, config: ExperimentConfig) -> list[object]:
             "sigma": config.particle_diameter,
             "r_cut": repulsive_cutoff,
         }
-    return [repulsion, attraction, wall_repulsion]
+    magnetic = None
+    if config.magnetic_field is not None and config.magnetic_moment is not None:
+        magnetic = hoomd.md.external.field.Magnetic()
+        initial_field = (
+            config.magnetic_field
+            if config.magnetic_start_step == 0
+            else (0.0, 0.0, 0.0)
+        )
+        for particle_type in config.particle_types:
+            magnetic.params[particle_type] = {
+                "B": initial_field,
+                "mu": config.magnetic_moment,
+            }
+    forces = [repulsion, attraction, wall_repulsion]
+    if magnetic is not None:
+        forces.append(magnetic)
+    return forces, magnetic
 
 
 def run(
@@ -199,7 +229,7 @@ def run(
             config.angular_drag,
         ),
     )
-    forces = configure_forces(hoomd, config)
+    forces, magnetic = configure_forces(hoomd, config)
     simulation.operations.integrator = hoomd.md.Integrator(
         dt=config.dt,
         integrate_rotational_dof=True,
@@ -239,7 +269,16 @@ def run(
         filter=hoomd.filter.All(),
         kT=config.temperature,
     )
-    simulation.run(config.steps)
+    if magnetic is not None and config.magnetic_start_step > 0:
+        simulation.run(config.magnetic_start_step)
+        for particle_type in config.particle_types:
+            magnetic.params[particle_type] = {
+                "B": config.magnetic_field,
+                "mu": config.magnetic_moment,
+            }
+        simulation.run(config.steps - config.magnetic_start_step)
+    else:
+        simulation.run(config.steps)
     writer.flush()
 
     metadata = {
@@ -251,6 +290,9 @@ def run(
         "simulated_time": config.dt * config.steps,
         "particle_count": config.particle_count,
         "population": config.population,
+        "interaction_mode": config.interaction_mode,
+        "magnetic_field": config.magnetic_field,
+        "magnetic_start_step": config.magnetic_start_step,
         "device": type(simulation.device).__name__,
     }
     (output_directory / "run.json").write_text(

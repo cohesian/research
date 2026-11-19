@@ -4,14 +4,38 @@ from pathlib import Path
 
 import numpy as np
 
+from assembly_study import resolved_config
+from analyze import first_joint_passage_time, first_passage_time
 from config import load_config, write_config
-from metrics import component_sizes, contact_edges
+from metrics import bond_orientational_order, component_sizes, contact_edges
 from render import largest_component_nodes, select_frame_indices
 from simulate import random_positions
 from study import summarize_run
 
 
 ROOT = Path(__file__).parents[1]
+
+
+def test_first_passage_time_distinguishes_reached_and_unreached_thresholds() -> None:
+    rows = [
+        {"time": 0.0, "order": 0.1},
+        {"time": 2.0, "order": 0.6},
+    ]
+
+    assert first_passage_time(rows, "order", 0.5) == 2.0
+    assert first_passage_time(rows, "order", 0.9) is None
+
+
+def test_joint_passage_rejects_small_ordered_fragments() -> None:
+    rows = [
+        {"time": 0.0, "component": 0.1, "order": 0.9},
+        {"time": 2.0, "component": 0.6, "order": 0.7},
+    ]
+
+    assert first_joint_passage_time(
+        rows,
+        {"component": 0.5, "order": 0.5},
+    ) == 2.0
 
 
 def test_configuration_declares_asymmetric_patch_types() -> None:
@@ -36,6 +60,22 @@ def test_contact_graph_requires_facing_patches() -> None:
 
     assert contact_edges(positions, facing, (0, 0), ("P1",), config) == ((0, 1),)
     assert contact_edges(positions, away, (0, 0), ("P1",), config) == ()
+
+
+def test_sixfold_bond_order_detects_a_regular_hexagonal_neighborhood() -> None:
+    angles = np.arange(6) * np.pi / 3.0
+    positions = np.vstack(
+        (
+            np.zeros((1, 3)),
+            np.column_stack((np.cos(angles), np.sin(angles), np.zeros(6))),
+        )
+    )
+    edges = tuple((0, index) for index in range(1, 7))
+
+    local, global_order = bond_orientational_order(positions, edges)
+
+    assert np.isclose(local, 1.0)
+    assert np.isclose(global_order, 1.0)
 
 
 def test_snapshot_selection_includes_peak_and_temporal_landmarks() -> None:
@@ -74,6 +114,30 @@ def test_resolved_configuration_round_trip(tmp_path: Path) -> None:
     write_config(config, path)
 
     assert load_config(path) == config
+
+
+def test_delayed_field_configuration_preserves_density() -> None:
+    base = load_config(ROOT / "assembly-base.toml")
+    config = resolved_config(
+        base,
+        {
+            "particle_count": 192,
+            "interaction": "patchy",
+            "field_strength": 0.8,
+            "field_start_fraction": 0.5,
+        },
+        seed=41,
+        reference_count=96,
+        quick=False,
+    )
+
+    assert config.population == {"P3": 192}
+    assert np.isclose(
+        192 / (2 * config.wall_half_extent) ** 2,
+        96 / (2 * base.wall_half_extent) ** 2,
+    )
+    assert config.magnetic_field == (0.8, 0.0, 0.0)
+    assert config.magnetic_start_step == config.steps // 2
 
 
 def test_run_summary_separates_peak_tail_and_persistence() -> None:

@@ -57,6 +57,9 @@ def contact_edges(
             distance = float(np.linalg.norm(displacement))
             if distance == 0.0 or distance > config.contact_cutoff:
                 continue
+            if config.interaction_mode == "isotropic":
+                edges.append((left, right))
+                continue
             direction = displacement / distance
             left_alignment = float(np.max(directors[left] @ direction))
             right_alignment = float(np.max(directors[right] @ -direction))
@@ -66,6 +69,53 @@ def contact_edges(
             ):
                 edges.append((left, right))
     return tuple(edges)
+
+
+def bond_orientational_order(
+    positions: FloatArray,
+    edges: Sequence[tuple[int, int]],
+    *,
+    symmetry: int = 6,
+) -> tuple[float, float]:
+    """Return local and global bond order for an undirected contact graph.
+
+    ``local`` measures whether each particle's neighborhood has the requested
+    angular symmetry even when different domains point in different
+    directions. ``global`` is high only when those local domains also share a
+    common orientation.
+    """
+
+    neighbors: list[list[float]] = [[] for _ in range(len(positions))]
+    for left, right in edges:
+        displacement = positions[right, :2] - positions[left, :2]
+        angle = math.atan2(float(displacement[1]), float(displacement[0]))
+        neighbors[left].append(angle)
+        neighbors[right].append(angle + math.pi)
+    local_values = [
+        np.mean(np.exp(1j * symmetry * np.asarray(angles)))
+        for angles in neighbors
+        if len(angles) >= 2
+    ]
+    if not local_values:
+        return 0.0, 0.0
+    return (
+        float(np.mean(np.abs(local_values))),
+        float(abs(np.mean(local_values))),
+    )
+
+
+def coordination_fractions(
+    particle_count: int,
+    edges: Sequence[tuple[int, int]],
+) -> dict[int, float]:
+    degrees = np.zeros(particle_count, dtype=int)
+    for left, right in edges:
+        degrees[left] += 1
+        degrees[right] += 1
+    return {
+        degree: float(np.mean(degrees == degree))
+        for degree in (2, 3, 6)
+    }
 
 
 def component_sizes(
@@ -117,11 +167,21 @@ def structural_observables(
     sizes = component_sizes(len(positions), edges)
     angles = quaternion_angles(np.asarray(orientations, dtype=float))
     order = abs(np.mean(np.exp(1j * config.orientational_order * angles)))
+    local_sixfold, global_sixfold = bond_orientational_order(
+        positions,
+        edges,
+        symmetry=6,
+    )
+    coordination = coordination_fractions(len(positions), edges)
     return {
         "contact_count": float(len(edges)),
         "component_count": float(len(sizes)),
         "largest_component_fraction": float(max(sizes) / len(positions)),
         "mean_degree": float(2.0 * len(edges) / len(positions)),
         "orientational_order": float(order),
+        "local_bond_order_6": local_sixfold,
+        "global_bond_order_6": global_sixfold,
+        "coordination_2_fraction": coordination[2],
+        "coordination_3_fraction": coordination[3],
+        "coordination_6_fraction": coordination[6],
     }
-

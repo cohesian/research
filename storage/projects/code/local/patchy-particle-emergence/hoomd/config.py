@@ -26,6 +26,7 @@ class ExperimentConfig:
     candidate_pool: int
     population: dict[str, int]
     repulsion_energy: float
+    interaction_mode: str
     patch_attraction: float
     patch_range: float
     patch_cutoff: float
@@ -35,6 +36,9 @@ class ExperimentConfig:
     contact_cutoff: float
     minimum_patch_alignment: float
     orientational_order: int
+    magnetic_field: tuple[float, float, float] | None
+    magnetic_moment: tuple[float, float, float] | None
+    magnetic_start_step: int
 
     @property
     def particle_count(self) -> int:
@@ -128,6 +132,8 @@ class ExperimentConfig:
             raise ValueError(
                 "initialization method must be uniform_rejection or blue_noise"
             )
+        if self.interaction_mode not in {"isotropic", "patchy"}:
+            raise ValueError("interaction mode must be isotropic or patchy")
         known_types = set(self.particle_types)
         for pair, attraction in self.pair_attraction.items():
             parts = pair.split("-")
@@ -145,6 +151,14 @@ class ExperimentConfig:
             raise ValueError("patch_half_angle must lie in (0, pi)")
         if not 0.0 <= self.minimum_patch_alignment <= 1.0:
             raise ValueError("minimum_patch_alignment must lie in [0, 1]")
+        has_field = self.magnetic_field is not None
+        has_moment = self.magnetic_moment is not None
+        if has_field != has_moment:
+            raise ValueError("magnetic field and moment must be declared together")
+        if self.magnetic_start_step < 0 or self.magnetic_start_step > self.steps:
+            raise ValueError("magnetic_start_step must lie within the simulation")
+        if has_field and self.interaction_mode != "patchy":
+            raise ValueError("the magnetic alignment experiment requires patchy particles")
 
 
 def load_config(path: str | Path) -> ExperimentConfig:
@@ -157,6 +171,8 @@ def load_config(path: str | Path) -> ExperimentConfig:
     interaction = raw["interaction"]
     analysis = raw["analysis"]
     initialization = raw.get("initialization", {})
+    field = raw.get("field", {})
+    field_enabled = bool(field.get("enabled", False))
     config = ExperimentConfig(
         seed=int(simulation["seed"]),
         dt=float(simulation["dt"]),
@@ -176,6 +192,7 @@ def load_config(path: str | Path) -> ExperimentConfig:
         candidate_pool=int(initialization.get("candidate_pool", 64)),
         population={name: int(count) for name, count in raw["population"].items()},
         repulsion_energy=float(interaction["repulsion_energy"]),
+        interaction_mode=str(interaction.get("mode", "patchy")),
         patch_attraction=float(interaction["patch_attraction"]),
         patch_range=float(interaction["patch_range"]),
         patch_cutoff=float(interaction["patch_cutoff"]),
@@ -188,6 +205,17 @@ def load_config(path: str | Path) -> ExperimentConfig:
         contact_cutoff=float(analysis["contact_cutoff"]),
         minimum_patch_alignment=float(analysis["minimum_patch_alignment"]),
         orientational_order=int(analysis["orientational_order"]),
+        magnetic_field=(
+            tuple(float(value) for value in field["vector"])
+            if field_enabled
+            else None
+        ),
+        magnetic_moment=(
+            tuple(float(value) for value in field["moment"])
+            if field_enabled
+            else None
+        ),
+        magnetic_start_step=int(field.get("start_step", 0)),
     )
     config.validate()
     return config
@@ -226,6 +254,7 @@ def write_config(config: ExperimentConfig, path: str | Path) -> None:
             "",
             "[interaction]",
             f"repulsion_energy = {config.repulsion_energy!r}",
+            f'mode = "{config.interaction_mode}"',
             f"patch_attraction = {config.patch_attraction!r}",
             f"patch_range = {config.patch_range!r}",
             f"patch_cutoff = {config.patch_cutoff!r}",
@@ -238,6 +267,20 @@ def write_config(config: ExperimentConfig, path: str | Path) -> None:
         lines.extend(
             f"{pair} = {value!r}"
             for pair, value in config.pair_attraction.items()
+        )
+    lines.extend(["", "[field]"])
+    lines.append(
+        f"enabled = {'true' if config.magnetic_field is not None else 'false'}"
+    )
+    if config.magnetic_field is not None and config.magnetic_moment is not None:
+        field = ", ".join(repr(value) for value in config.magnetic_field)
+        moment = ", ".join(repr(value) for value in config.magnetic_moment)
+        lines.extend(
+            [
+                f"vector = [{field}]",
+                f"moment = [{moment}]",
+                f"start_step = {config.magnetic_start_step}",
+            ]
         )
     lines.extend(
         [

@@ -89,6 +89,60 @@ It uses all 400 saved simulation states, briefly holds the initial,
 strongest-assembly, and final states, and displays the live contact graph and
 macroscopic observables. It does not rerun HOOMD or call a voice service.
 
+## Hexagonal assembly experiment
+
+[`assembly.toml`](assembly.toml) asks a narrower visual question: how do
+interaction symmetry, system size, and an aligning field change assembly
+geometry and assembly time? It declares five controlled trajectories:
+
+For a from-first-principles walkthrough, start with the
+[`learning guide`](docs/README.md). It separates the mathematical model from
+the HOOMD implementation and includes a small notebook for inspecting the
+results.
+
+| Condition | Intended comparison |
+|---|---|
+| isotropic | compact aggregation and six-neighbor local packing |
+| three-patch | open, degree-three networks with possible hexagonal cells |
+| three-patch + delayed field | competition between existing bonds and global alignment |
+| small three-patch | finite-size reference |
+| large three-patch | cost of building one coherent domain at larger scale |
+
+The three-patch particles carry evenly spaced directors at $0$, $2\pi/3$, and
+$4\pi/3$. No hexagon is encoded as a target. Hexagonal cells are possible
+because local valence and angle constraints admit them, but defects, separate
+domains, and incomplete assembly are valid outcomes.
+
+The external magnetic field is activated halfway through its trajectory. It
+applies torque to a local dipole; it does not pull particles in the field
+direction. A weak field may fail to rotate an already bonded network, while a
+strong field may align particles by breaking or frustrating some contacts.
+That competition is part of the experiment rather than a rendering effect.
+
+The analysis now separates:
+
+- connected-component growth;
+- mean degree and degree-two, degree-three, and degree-six fractions;
+- local sixfold bond order, which can remain high in differently oriented
+  domains; and
+- global sixfold bond order, which requires those domains to agree.
+
+Run the inexpensive calibration before the full trajectories:
+
+~~~bash
+pixi run assembly-smoke
+pixi run assembly-study
+pixi run assembly-video
+~~~
+
+`assembly-video` renders a synchronized 1920×1080 comparison directly from
+the three 96-particle trajectories. It contains no narration and is intended
+as the review master for a later Studio explanation.
+
+The first release uses one seed to produce and inspect the visual hypothesis.
+Any claim about scaling or field effectiveness requires a later seeded
+ensemble and uncertainty estimates.
+
 ## Time and translation
 
 HOOMD's molecular-dynamics integrator advances a synchronized timestep `dt`.
