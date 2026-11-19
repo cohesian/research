@@ -1,0 +1,17 @@
+[project]
+name = "cohesian-compositional-architecture"
+version = "0.1.0"
+description = "Executable examples for Cohesian's compositional architecture lecture"
+requires-python = ">=3.12"
+
+[project.scripts]
+composition-demo = "compositional_architecture.demo:main"
+
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["compositional_architecture*"]
+
